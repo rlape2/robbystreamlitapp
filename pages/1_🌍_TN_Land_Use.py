@@ -38,7 +38,7 @@ TN = landcover.clipToCollection(feat)
 
 fc = feat.filter(ee.Filter.eq('NAMELSAD', county))
 selection = TN.clipToCollection(fc)
-Map.centerObject(selection)
+Map.centerObject(fc)
 Map.addLayer(selection, {}, 'selected county')
 
 
@@ -52,7 +52,7 @@ Map.addLayer(selection, {}, 'selected county')
 # Map.centerObject(fc)
 
 
-Map.addLayer(feat.style(**style), {}, "Counties")
+Map.addLayer(feat.style(**style), {}, "Counties", False)
 Map.add_legend(title='NLCD Land Cover', builtin_legend='NLCD')
 
 with col1:
