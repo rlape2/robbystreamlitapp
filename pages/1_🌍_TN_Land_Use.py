@@ -6,7 +6,7 @@ st.title("TN Land Use")
 
  
 
-col1, col2 = st.columns([7, 7])
+col1, col2 = st.columns([20, 7])
 
 counties = ee.FeatureCollection('TIGER/2018/Counties')
 feat = counties.filter(ee.Filter.eq('STATEFP', '47'))
