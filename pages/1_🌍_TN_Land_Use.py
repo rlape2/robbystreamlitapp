@@ -37,12 +37,12 @@ landcover = dataset.select('landcover')
 Map.addLayer(landcover, {}, 'NLCD 2019')
 
 fc = feat.filter(ee.Filter.eq('NAMELSAD', county))
-ls = dataset.clipToCollection(fc)
+ls = dataset.clip(fc)
 Map.centerObject(fc)
 
 
-Map.addLayer(feat.style(**style), {}, "Counties", False)
-
+Map.addLayer(feat.style(**style), {}, "Counties")
+Map.add_legend(title='NLCD Land Cover', builtin_legend='NLCD')
 
 with col1:
     Map.to_streamlit()
