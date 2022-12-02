@@ -35,7 +35,7 @@ Map = geemap.Map()
 dataset = ee.Image('USGS/NLCD_RELEASES/2019_REL/NLCD/2019')
 landcover = dataset.select('landcover')
 TN = landcover.clipToCollection(feat)
-Map.addLayer(TN, {}, 'NLCD 2019')
+# Map.addLayer(TN, {}, 'NLCD 2019')
 
 
 fc = feat.filter(ee.Filter.eq('NAMELSAD', county))
@@ -44,7 +44,7 @@ dataset = fc1.clipToCollection(fc)
 Map.centerObject(fc)
 
 
-Map.addLayer(feat.style(**style), {}, "Counties")
+Map.addLayer(dataset.style(**style), {}, "Counties")
 Map.add_legend(title='NLCD Land Cover', builtin_legend='NLCD')
 
 with col1:
