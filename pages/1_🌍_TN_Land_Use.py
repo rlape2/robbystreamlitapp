@@ -40,7 +40,7 @@ Map.addLayer(TN, {}, 'NLCD 2019')
 
 fc = feat.filter(ee.Filter.eq('NAMELSAD', county))
 fc1 = TN.clipToCollection(feat)
-dataset = dataset.clipToCollection(fc1)
+dataset = fc1.clipToCollection(fc)
 Map.centerObject(fc)
 
 
