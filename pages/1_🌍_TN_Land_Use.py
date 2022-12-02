@@ -42,7 +42,7 @@ Map.centerObject(fc)
 
 
 Map.addLayer(feat.style(**style), {}, "Counties")
-Map.add_legend(title='NLCD Land Cover', builtin_legend='NLCD')
+Map.add_legend(title='NLCD Land Cover', builtin_legend='NLCD', False)
 
 with col1:
     Map.to_streamlit()
