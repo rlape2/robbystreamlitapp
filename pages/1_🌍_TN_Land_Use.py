@@ -36,7 +36,7 @@ dataset = ee.Image('USGS/NLCD_RELEASES/2019_REL/NLCD/2019')
 landcover = dataset.select('landcover')
 Map.addLayer(landcover, {}, 'NLCD 2019')
 
-fc = feat.filter(ee.Filter.eq('NAMELSAD', county))
+fc = feat.filter(ee.Filter.eq('NAME', county))
 dataset = dataset.clipToCollection(fc)
 Map.centerObject(fc)
 
