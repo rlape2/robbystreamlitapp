@@ -45,6 +45,6 @@ Map.addLayer(feat.style(**style), {}, "Counties")
 Map.add_legend(title='NLCD Land Cover', builtin_legend='NLCD')
 
 with col1:
-    Map.to_streamlit()
+    Map.to_streamlit(height=600)
 
 
